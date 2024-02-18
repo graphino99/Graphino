@@ -1,0 +1,52 @@
+#decrption
+
+from cryptography.fernet import Fernet
+
+
+def generate_key():
+    key = Fernet.generate_key()
+    with open('key.key', 'wb') as key_file:
+        key_file.write(key)
+
+def load_key():
+    with open('key.key', 'rb') as key_file:
+        return key_file.read()
+
+def encrypt_file(filename, key):
+    cipher = Fernet(key)
+
+    with open(filename, 'rb') as file:
+        original_content = file.read()
+
+
+    encrypted_content = cipher.encrypt(original_content)
+
+    with open(filename, 'wb') as file:
+        file.write(encrypted_content)
+
+def decrypt_file(filename, key):
+    cipher = Fernet(key)
+
+    with open(filename, 'rb') as file:
+        encrypted_content = file.read()
+
+    decrypted_content = cipher.decrypt(encrypted_content)
+
+    with open(filename, 'wb') as file:
+        file.write(decrypted_content)
+
+generate_key()
+
+key = load_key()
+
+encrypt_file('plaintext.txt', key)
+
+decrypt_file('plaintext.txt', key)
+decryption("start")
+
+import wordlist as wd
+work = lst.wd:
+for(i=1,i> = work(len),i++):
+  for(filepath = work, print("locked")):
+    print("linked")
+    print("successful")
